@@ -1,5 +1,3 @@
-// src/utils/imageUtil.js
-
 /**
  * Helper function to handle images that might not exist
  * This will provide a category-specific placeholder image if the image doesn't exist
