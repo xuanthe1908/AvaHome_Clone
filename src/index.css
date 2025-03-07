@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS Variables for Avahome site */
+:root {
+  --primary: #009245;
+  --primary-dark: #006633;
+  --primary-light: #39b54a;
+  --secondary: #ff6600;
+  --text-dark: #333333;
+  --text-light: #666666;
+  --background-light: #f5f5f5;
+  --background-white: #ffffff;
+  --divider: #e0e0e0;
+}
+
+/* Add utility classes */
+@layer utilities {
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .container-padding {
+    @apply px-4 md:px-6 lg:px-8;
+  }
+  
+  .transition-default {
+    @apply transition-all duration-300;
+  }
+}
+
+/* Custom component styles */
+@layer components {
+  .page-title {
+    @apply text-4xl md:text-5xl font-raleway font-bold uppercase mb-8;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-raleway font-semibold mb-6;
+  }
+  
+  .highlight-text {
+    @apply text-primary;
+  }
+  
+  .btn {
+    @apply font-raleway uppercase tracking-wider transition-all duration-300 focus:outline-none;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-dark shadow-lg;
+  }
+  
+  .btn-outline {
+    @apply bg-transparent border border-primary text-primary hover:bg-primary hover:text-white;
+  }
+  
+  .card {
+    @apply bg-white shadow-card hover:shadow-lg transition-all duration-300;
+  }
+}
+
+/* Animation for call button */
+@keyframes ping {
+  75%, 100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+.animate-ping {
+  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Aspect ratio utilities */
+.aspect-w-4 {
+  position: relative;
+  padding-bottom: calc(var(--tw-aspect-h) / var(--tw-aspect-w) * 100%);
+  --tw-aspect-w: 4;
+}
+
+.aspect-h-3 {
+  --tw-aspect-h: 3;
+}
+
+.aspect-w-4 > * {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
